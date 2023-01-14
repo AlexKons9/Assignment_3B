@@ -1,0 +1,114 @@
+﻿@model Assignment_3B.Models.Certificate
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Certificate</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AssessmentTestCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AssessmentTestCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Candidate's Full Name")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CandidateId.FirstName)
+            @Html.DisplayFor(model => model.CandidateId.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Certificate in")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CertificateType.Type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ExaminationDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExaminationDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ScoreReportDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ScoreReportDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CandidateScore)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CandidateScore)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PercentageScore)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PercentageScore)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaximumScore)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaximumScore)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Exam.AssessmentTestResult)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Exam.AssessmentTestResult)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TopicDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TopicDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumberOfAwardedMarks)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumberOfAwardedMarks)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumberOfPossibleMakrs)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumberOfPossibleMakrs)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index", "Certificate", new { @class = "btn btn-primary" })
+</p>

@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Admin's UI</h2>
+
+<div>
+    <span>
+        @Html.ActionLink("Candidates Menu", "Index", "Candidate", new { area = "" }, new { @class = "btn btn-primary buttonForm" })
+    </span>
+    <span>
+        @Html.ActionLink("Certificates Menu", "Index", "Certificate", new { area = "" }, new { @class = "btn btn-primary buttonForm" })
+    </span>
+    <span>
+        @Html.ActionLink("Exam Results Menu", "Index", "ExamsResults", new { area = "" }, new { @class = "btn btn-primary buttonForm" })
+    </span>
+</div>

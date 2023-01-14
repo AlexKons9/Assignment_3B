@@ -1,0 +1,60 @@
+﻿@model Assignment_3B.Models.Exam
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Exam</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayName("Candidate's Full Name")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CandidateId.FirstName)
+            @Html.DisplayFor(model => model.CandidateId.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Type of Certificate")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CertificateType.Type)
+        </dd>
+        <dt>
+            @Html.DisplayName("Mark per Topic")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MarkPerTopic.MarkOfTopic1) |
+            @Html.DisplayFor(model => model.MarkPerTopic.MarkOfTopic2) |
+            @Html.DisplayFor(model => model.MarkPerTopic.MarkOfTopic3) |
+            @Html.DisplayFor(model => model.MarkPerTopic.MarkOfTopic4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FinalScore)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FinalScore)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AssessmentTestResult)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AssessmentTestResult)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index", new { area = "" }, new { @class = "btn btn-primary" })
+</p>

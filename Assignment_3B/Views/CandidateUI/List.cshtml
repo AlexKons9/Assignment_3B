@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Assignment_3B.Models.Certificate>
+
+@{
+    ViewBag.Title = "My Certificates";
+}
+
+<h2>@ViewBag.Title</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AssessmentTestCode)
+        </th>
+        <th>
+            @Html.DisplayName("Candidate's Full Name")
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExaminationDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CandidateScore)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TopicDescription)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AssessmentTestCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CandidateId.FirstName)
+                @Html.DisplayFor(modelItem => item.CandidateId.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ExaminationDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CandidateScore)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TopicDescription)
+            </td>
+            <td>
+                @Html.ActionLink("Details", "Details", new { id = item.CertificateId }) |
+            </td>
+        </tr>
+    }
+
+</table>
+<p>
+    @Html.ActionLink("Back To Candidate's Menu", "Index", "CandidateUI")
+</p>

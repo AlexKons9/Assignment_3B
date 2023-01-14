@@ -1,0 +1,101 @@
+﻿@model IEnumerable<Assignment_3B.Models.Certificate>
+
+@{
+    ViewBag.Title = "CandidateUI";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<h3 style="color: aqua">@ViewBag.Message</h3>
+
+
+@using (Html.BeginForm("Index", "CandidateUI", FormMethod.Get))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.Label("Enter your Candidate Id to see your Certificates")
+            <div class="col-md-10">
+                <input type="number" name="CandidateId" class="form-control"/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-10">
+                <input type="submit" value="Search" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AssessmentTestCode)
+        </th>
+        <th>
+            @Html.DisplayName("Candidate's Full Name")
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExaminationDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CandidateScore)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TopicDescription)
+        </th>
+    </tr>
+
+
+    @if (Model.Count() == 0)
+    {
+        <tr>
+            <td style="color:red">
+                No Certificates Found With Such Candidate Id
+            </td>
+        </tr>
+    }
+    else
+    {
+        foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AssessmentTestCode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CandidateId.FirstName)
+                    @Html.DisplayFor(modelItem => item.CandidateId.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ExaminationDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CandidateScore)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TopicDescription)
+                </td>
+                <td>
+                    @Html.ActionLink("Details", "Details", "CandidateUI",new { id = item.CertificateId }, new { @class = "btn btn-primary" }) 
+                    @Html.ActionLink("PDF Download", "PdfMaker", new { id = item.CertificateId }, new { @class = "btn btn-success" })
+                </td>
+            </tr>
+        }
+    }
+</table>
+
+
+
+
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

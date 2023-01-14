@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Assignment_3B.Models.Exam>
+
+@{
+    ViewBag.Title = "List of Results";
+}
+
+<h2>@ViewBag.Title</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("Candidate's Full Name")
+        </th>
+        <th>
+            @Html.DisplayName("Type of Certificate")
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FinalScore)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AssessmentTestResult)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CandidateId.FirstName)
+                @Html.DisplayFor(modelItem => item.CandidateId.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CertificateType.Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FinalScore)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AssessmentTestResult)
+            </td>
+            <td>
+                @Html.ActionLink("Details", "Details", new { id = item.ExamsId }, new { @class = "btn btn-info" })
+            </td>
+        </tr>
+    }
+
+</table>
+
+    <p>
+        @Html.ActionLink("Back To Admin's Menu", "Index", "AdminUI", new { area = "" }, new { @class = "btn btn-primary" })
+    </p>
