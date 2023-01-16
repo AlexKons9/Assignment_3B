@@ -12,13 +12,15 @@ namespace Assignment_3B.Models
         [Key]
         public int CandidateId { get; set; }
         [Required]
-        public string FirstName { get; set;}
+        public string FirstName { get; set; }
         public string MiddleName { get; set; }
         [Required]
-        public string LastName { get; set;}
+        public string LastName { get; set; }
+        [Required]
         public Gender Gender { get; set; }
         public string NativeLanguage { get; set; }
         public DateTime BirthDate { get; set; }
+        [Required]
         public PhotoIdType PhotoIdType { get; set; }
         public string PhotoIdNumber { get; set;}
         public DateTime PhotoIssueDate { get; set;}

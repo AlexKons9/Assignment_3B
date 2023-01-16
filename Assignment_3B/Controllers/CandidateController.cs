@@ -157,7 +157,9 @@ namespace Assignment_3B.Controllers
             var idType = _context.PhotoIdTypes.Find(candidate.PhotoIdType.Id);
             candidate.Gender = genderType;
             candidate.PhotoIdType = idType;
-            _repository.AddOrUpdate(candidate);
+            _context.Candidates.Attach(candidate);
+            _context.Entry(candidate).State = EntityState.Modified;
+            _context.SaveChanges();
             return RedirectToAction("Index");
         }
 

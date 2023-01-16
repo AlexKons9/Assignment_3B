@@ -151,6 +151,10 @@
     <Compile Include="Migrations\202301122244326_ChangesToGenderModelAndPhotoIdModel.designer.cs">
       <DependentUpon>202301122244326_ChangesToGenderModelAndPhotoIdModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202301141819269_InitialCreate2.cs" />
+    <Compile Include="Migrations\202301141819269_InitialCreate2.designer.cs">
+      <DependentUpon>202301141819269_InitialCreate2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Candidate.cs" />
     <Compile Include="Models\Certificate.cs" />
@@ -236,6 +240,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202301122244326_ChangesToGenderModelAndPhotoIdModel.resx">
       <DependentUpon>202301122244326_ChangesToGenderModelAndPhotoIdModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202301141819269_InitialCreate2.resx">
+      <DependentUpon>202301141819269_InitialCreate2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
